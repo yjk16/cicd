@@ -9,9 +9,3 @@ It is a method in which some of the processes are automated to deliver a product
 ### Why is it so useful?
 
 It is popular in DevOps because it makes things more efficient with less human errors and ultimately speeds everything up.  It makes it easier to spot and fix bugs.
-
-<<<<<<< HEAD
-Test
-=======
-Testing a reset
->>>>>>> parent of 155031e (deleted unnecessary line)
