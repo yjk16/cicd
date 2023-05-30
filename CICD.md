@@ -84,3 +84,8 @@ Alternatives to Jenkins include:
 
 ----
 
+### Webhooks
+
+You can build a trigger to run when GitHub is updated.
+
+![alt](trigger.png)
