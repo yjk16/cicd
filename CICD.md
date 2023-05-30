@@ -69,6 +69,8 @@ You want to be careful deploying, as once it's done, there is no way back and th
 
 `Steps` are actions that you want to perform in your Jenkins' pipeline.
 
+A multi-stage build is called a `pipeline`.
+
 ----
 
 ### Alternatives to Jenkins
@@ -81,6 +83,105 @@ Alternatives to Jenkins include:
 - TeamCity
 - Travis CI
 - BuildMaster
+
+----
+
+### How to build a job in Jenkins
+
+1. Log into Jenkins
+2. Click on `New Item`
+3. Enter item name (use this convention: name-description. In this example `yoonji-checking-jenkins-OS)
+4. Create `Freestyle project`
+5. Click `OK`
+6. Under `General`, click `Discard old builds` and under `Max # of builds to keep` put `3`
+7. Under `Build`, `Add build step`, `Execute shell`
+8. Add your commands.  If you want to find out the O/S, `uname -a` (this provides all the info of this username)
+9. `Save`
+
+The job has been successfully created.
+
+10. Click on `Build now` to build it.
+
+You can watch it run on `Build History`
+
+- Red - failed
+- Blue - success
+
+To check processes, click on the dropdown menu next to the coloured circle, and click `Console Output`
+
+If you need to change the configuration, click on `Configure` on the left hand drop-down menu, edit your changes and save them.
+
+----
+
+### Linking two jobs together on Jenkins
+
+1. Click on `New item` and enter an appropriate name.  For this example, `yoonji-checking-timezone`
+2. `Freestyle project`, `OK`
+3. Under `General`, click `Discard old builds` and under `Max # of builds to keep` put `3`
+4. Under `Build`, `Add build step`, `Execute shell` and add the command `date` (which is the Linux command to find the date) and `Save`
+5. Click on `Build now` to check it works and you can check `Console Output` if you want
+
+To link the two builds together (only when they are independently successful)...
+
+In this case, `date` is run on Linux, so you will want the first build to be successful in checking that the O/S is Linux, and if that is the case, the second build (date) will be triggered.
+
+6. Go back to the dashboard, find the first job you created (i.e. `yoonji-checking-jenkins-OS`) and on the dropdown menu click `Configure`
+7. Under `Post-build Actions`, `Build other projects`
+8. Under `Projects to build` find the project you want (in this case `yoonji-checking-timezone`) NOTE: you may need to use the backspace if it says `No such project`
+9. You want `Trigger only if build is stable` to be ticked
+10. `Save`
+11. If you `Build now` it should trigger the next job automatically
+
+NOTE: Always test jobs manually and independently, only then link them together.  Then test again!
+
+----
+
+### To connect GibHub repo with Jenkins using ssh key
+
+1. Go to the Github repo that you require (in this case cicd-with-jenkins)
+2. Go to `settings`
+3. `Deploy keys`
+4. `Add deploy key`
+5. Add your `Title` and then paste in your public ssh key under `Key`
+6. Click `Allow write access` then `Add key`
+
+Then go to Jenkins
+
+7. `New Item`, name it, (in this case `yoonji-ci`), `Freestyle project`
+8. Under `General`, `Discard old builds` and enter `3` under `Max # of builds to keep` and click on `GitHub project`
+9. Under `Project url` copy and paste the http code from your GitHub repo (in this case `cicd-with-jenkins`)
+10. Under `Source Code Management` click `Git` and under `Repositories` in the `Repository URL` copy and paste your ssh code from your GitHub repo
+11. Under `credentials`, `Add`
+12. In `Add Credentials` Under `Kind`, pick `SSH Username with private key`, put in a `Username` and where it says `Private Key`, click `Enter directly` and `Add`, then paste in your private ssh key here, then `Add`
+13. Under `Branches to build` where it says `Branch Specifier` you will want to change it from `master` to `main` (as this is what it is on GitHub)
+14. Under `Build Environment` click `Provide Node & npm bin/ folder to PATH`
+15. Under `Build`, `Execute shell`
+16. Add the commands `cd app`, `npm install` and `npm test`
+17. `Save`
+
+----
+
+### To set up automated testing
+
+1. Go to your ci job: `yoon-ji-ci`
+2. Check that you have correct info from above
+3. Make sure under `Office 365 Connector` you've clicked `Restrict where this project can run` and the `Label Expression` is `sparta-ubuntu-node` (If you get a warning, use the backspace)
+4. Under `Build Triggers` make sure you click `GitHub hook trigger for GTIScm polling`
+5. Make sure under `Build Environment` you've clicked `Provide Node & npm bin/ folder to PATH`
+6. Under `Build`, `Execute shell` and add commands `cd app`, `npm install`, `npm test`
+7. `Save`
+8. `Build now` to check
+9. Under `Build History` it will say `EC2 sparta ubuntu node` is offline.  It will kick in EC2 instances (which will be pending) and create an autoscaling group. The load balancer will be directing the load between Master and Agent. And once it is available, it will run on Jenkins.  And then you can also see that the EC2 instances are running on AWS
+10. If you check the `Console Output` the tests should have passed successfully which means it is ready to be pushed for production
+
+----
+
+### To trigger 'Build now' automatically
+
+1. Go to the right directory in Bash
+2. Change something, can use `nano README.md` for example, and save the change
+3. Add, commit and push the changes onto GitHub
+4. If everything has been done correctly, this should trigger the job
 
 ----
 
