@@ -9,3 +9,34 @@ It is a method in which some of the processes are automated to deliver a product
 ### Why is it so useful?
 
 It is popular in DevOps because it makes things more efficient with less human errors and ultimately speeds everything up.  It makes it easier to spot and fix bugs.
+
+----
+
+### Jenkins Stages
+
+![alt](jenkins.jpg)
+
+In order for the continuous integration stage to happen smoothly, it is required that all members of the team continuously push the code that they have tested into a single repository.
+
+You can use Jenkins to automatically test code, and once it has passed, it can go to the Master Node, otherwise, it will go from Agent Node back to wherever the issue lies, and the process repeats.
+
+Once the code is suitable for deployment, it can be passed to Amazon Web Services for `continuous delivery`.
+
+If this stage can be automated, it will have reached `continuous deployment`.
+
+You will need ssh keys to show that you have the required permissions for all of these stages.
+
+----
+
+### Alternatives to Jenkins
+
+Alternatives to Jenkins include:
+
+- GitLab
+- Atlassian Bamboo
+- CircleCI
+- TeamCity
+- Travis CI
+- BuildMaster
+
+----
