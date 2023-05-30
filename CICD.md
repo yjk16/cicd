@@ -2,7 +2,15 @@
 
 ### What is it?
 
-It is a method in which some of the processes are automated to deliver a product more efficiently and more frequently.  `Continous Integration` is when all members of the team continously integrate their work into a single repository.  `Continuous Delivery` is when enough automation from the integration part of the system has been successfully tested to the point where the product can be continuously delivered. `Continuous Deployment` is when the process of continous delivery can be automated.  This makes things more efficient, but sometimes it is preferable to use continuous delivery.  For example, if there is more time, you may want to deliver after checking first, in which case delivery would be preferable.
+It is a method in which some of the processes are automated to deliver a product more efficiently and more frequently.
+
+`Continous Integration` is when all members of the team continously integrate their work into a single repository.
+
+`Continuous Delivery` is when enough automation from the integration part of the system has been successfully tested to the point where the product can be continuously delivered. 
+
+`Continuous Deployment` is when the process of continous delivery can be automated.  This makes things more efficient, but sometimes it is preferable to use continuous delivery.  
+
+For example, if there is more time, you may want to deliver after checking first, in which case delivery would be preferable.
 
 NOTE: CI/CD is considered the backbone of DevOps.
 
@@ -27,7 +35,6 @@ It is popular in DevOps because it makes things more efficient with less human e
 - It helps advance the SDLC (software development life cycle) faster through automation
 
 NOTE: the SDLC = plan - design - develop - test - deploy
-
 
 ----
 
@@ -190,3 +197,27 @@ Then go to Jenkins
 You can build a trigger to run when GitHub is updated.
 
 ![alt](trigger.png)
+
+----
+
+### To create a GitHub webhook in the Jenkins pipeline
+
+(info from hevodata.com)
+
+1. You already have a ci build
+
+Go to GitHub
+
+2. Go to the appropriate repo (here `cicd-with-jenkins`), click `Settings`, then `Webhooks` and `Add webhook`
+3. Fill out info. `Payload URL` is your Jenkins URL but add `/github-webhook/` at the end.  The URL should look like: `http://address:port/github-webhook/`
+4. Under `Content type` pick `application json`
+5. Under `Which events would you like to trigger this webhook?` pick `Just the push event`. This will only send when someone pushes to the repo.
+6. `Add webhook`
+
+![alt](webhookgithub.png)
+
+You will get this notification:
+
+![alt](note.png)
+
+----
