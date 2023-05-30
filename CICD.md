@@ -37,7 +37,7 @@ NOTE: the SDLC = plan - design - develop - test - deploy
 
 In order for the continuous integration stage to happen smoothly, it is required that all members of the team continuously push the code that they have tested into a single repository.
 
-You can use Jenkins to automatically test code, and once it has passed, it can go to the Master Node, otherwise, it will go from Agent Node back to wherever the issue lies, and the process repeats.
+You can use Jenkins to automatically test code, and once the code has passed the test, it can go to the Master Node, otherwise, it will go from Agent Node back to wherever the issue lies, and the process repeats.
 
 Once the code is suitable for deployment, it can be passed to Amazon Web Services for `continuous delivery`.
 
