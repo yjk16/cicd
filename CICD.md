@@ -266,7 +266,7 @@ You will get this notification:
 
 ### 15. Creating a build to get the code from main branch and pushing it to production
 
-1. To ssh into AWS from Jenkins, when configuring, under the `Provide Node & npm` box, click `SSH Agent` and add the relevant key.  In this case, it will be `tech230`
+1. To ssh into AWS from Jenkins, when configuring, under the `Provide Node & npm` box, click `SSH Agent` and add the relevant key.  In this case, it will be `tech230.pem`
 
 Need to automate the process so not asked to confirm.
 
@@ -284,4 +284,3 @@ then
 
 2. Can ssh in from your instance to check manually...
 
-test
