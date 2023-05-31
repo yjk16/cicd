@@ -1,6 +1,6 @@
 # CI/CD
 
-### What is it?
+### 1. What is it?
 
 It is a method in which some of the processes are automated to deliver a product more efficiently and more frequently.
 
@@ -16,13 +16,13 @@ NOTE: CI/CD is considered the backbone of DevOps.
 
 ----
 
-### Why is it so useful?
+### 2. Why is it so useful?
 
 It is popular in DevOps because it makes things more efficient with less human errors and ultimately speeds everything up.  It makes it easier to spot and fix bugs.
 
 ----
 
-### Jenkins: what is it?
+### 3. Jenkins: what is it?
 
 (info from medium.com)
 
@@ -38,7 +38,7 @@ NOTE: the SDLC = plan - design - develop - test - deploy
 
 ----
 
-### Jenkins process
+### 4. Jenkins process
 
 ![alt](jenkins.jpg)
 
@@ -66,7 +66,7 @@ You want to be careful deploying, as once it's done, there is no way back and th
 
 ----
 
-### Jenkins stages and steps
+### 5. Jenkins stages and steps
 
 (info from cloudaffaire.com)
 
@@ -80,7 +80,7 @@ A multi-stage build is called a `pipeline`.
 
 ----
 
-### Alternatives to Jenkins
+### 6. Alternatives to Jenkins
 
 Alternatives to Jenkins include:
 
@@ -93,7 +93,7 @@ Alternatives to Jenkins include:
 
 ----
 
-### How to build a job in Jenkins
+### 7. How to build a job in Jenkins
 
 1. Log into Jenkins
 2. Click on `New Item`
@@ -120,7 +120,7 @@ If you need to change the configuration, click on `Configure` on the left hand d
 
 ----
 
-### Linking two jobs together on Jenkins
+### 8. Linking two jobs together on Jenkins
 
 1. Click on `New item` and enter an appropriate name.  For this example, `yoonji-checking-timezone`
 2. `Freestyle project`, `OK`
@@ -143,7 +143,7 @@ NOTE: Always test jobs manually and independently, only then link them together.
 
 ----
 
-### To connect GibHub repo with Jenkins using ssh key
+### 9. To connect GibHub repo with Jenkins using ssh key
 
 1. Go to the Github repo that you require (in this case cicd-with-jenkins)
 2. Go to `settings`
@@ -168,12 +168,15 @@ Then go to Jenkins
 
 ----
 
-### To set up automated testing
+### 10. To set up automated testing
 
 1. Go to your ci job: `yoon-ji-ci`
 2. Check that you have correct info from above
 3. Make sure under `Office 365 Connector` you've clicked `Restrict where this project can run` and the `Label Expression` is `sparta-ubuntu-node` (If you get a warning, use the backspace)
 4. Under `Build Triggers` make sure you click `GitHub hook trigger for GTIScm polling`
+
+![alt](trigger.png)
+
 5. Make sure under `Build Environment` you've clicked `Provide Node & npm bin/ folder to PATH`
 6. Under `Build`, `Execute shell` and add commands `cd app`, `npm install`, `npm test`
 7. `Save`
@@ -183,7 +186,7 @@ Then go to Jenkins
 
 ----
 
-### To trigger 'Build now' automatically
+### 11. To trigger 'Build now' automatically
 
 1. Go to the right directory in Bash
 2. Change something, can use `nano README.md` for example, and save the change
@@ -192,15 +195,15 @@ Then go to Jenkins
 
 ----
 
-### Webhooks
+### 12. Webhooks
 
-You can build a trigger to run when GitHub is updated.
+(info from getvero.com)
 
-![alt](trigger.png)
+Webhooks are like reverse APIs.  Whereas APIs need to pull data from a server periodically to stay up to date, with a webhook, the server can push the data the instant something happens.
 
 ----
 
-### To create a GitHub webhook in the Jenkins pipeline
+### 13. To create a GitHub webhook in the Jenkins pipeline
 
 (info from hevodata.com)
 
