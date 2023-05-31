@@ -254,4 +254,37 @@ You will get this notification:
 ![alt](note.png)
 
 ----
+<<<<<<< HEAD
 git 
+=======
+
+### 14. To merge git branches with Jenkins
+
+1. Create a new item `yoonji-ci-merge`
+2. Under Source Code Management, click `Git` and for `Branches to build` put `*/dev`
+3. Under `Additional behaviours`, choose `Merge before build`, Name of repository` should be `origin`, `Branch to merge to` should be `main`
+4. `Save` and test.
+
+----
+
+### 15. Creating a build to get the code from main branch and pushing it to production
+
+1. To ssh into AWS from Jenkins, when configuring, under the `Provide Node & npm` box, click `SSH Agent` and add the relevant key.  In this case, it will be `tech230.pem`
+
+Need to automate the process so not asked to confirm.
+
+Can use `rsync` or `scp` and disable StrictHostKeyChecking with something like the following...
+
+`ssh -o StrictHostKeyChecking=no user@hostname`
+
+and copy in the latest version of the app with changes into ubuntu/<instance_ip>:home/ubuntu
+
+then
+
+`cd app`
+`pm2 kill`
+`pm2 start app.js`
+
+2. Can ssh in from your instance to check manually...
+
+>>>>>>> dev
