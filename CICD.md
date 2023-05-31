@@ -8,7 +8,7 @@
 
 [3. Jenkins: what is it?](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#3-jenkins-what-is-it)
 
-[4.Jenkins process](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#4-jenkins-process)
+[4. Jenkins process](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#4-jenkins-process)
 
 [5. Jenkins stages and steps](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#5-jenkins-stages-and-steps)
 
