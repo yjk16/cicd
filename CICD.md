@@ -259,7 +259,7 @@ You will get this notification:
 
 1. Create a new item `yoonji-ci-merge`
 2. Under Source Code Management, click `Git` and for `Branches to build` put `*/dev`
-3. Under `Additional behaviours`, `Name of repository` should be `origin`, `Branch to merge to` should be `main`
+3. Under `Additional behaviours`, choose `Merge before build`, Name of repository` should be `origin`, `Branch to merge to` should be `main`
 4. `Save` and test.
 
 ----
@@ -283,3 +283,5 @@ then
 `pm2 start app.js`
 
 2. Can ssh in from your instance to check manually...
+
+test
