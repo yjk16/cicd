@@ -254,9 +254,6 @@ You will get this notification:
 ![alt](note.png)
 
 ----
-<<<<<<< HEAD
-git 
-=======
 
 ### 14. To merge git branches with Jenkins
 
@@ -286,5 +283,3 @@ then
 `pm2 start app.js`
 
 2. Can ssh in from your instance to check manually...
-
->>>>>>> dev
