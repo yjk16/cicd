@@ -1,5 +1,35 @@
 # CI/CD
 
+### Table of contents:
+
+[1. What is it?](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#1-what-is-it)
+
+[2. Why is it so useful?](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#2-why-is-it-so-useful)
+
+[3. Jenkins: what is it?](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#3-jenkins-what-is-it)
+
+[4.Jenkins process](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#4-jenkins-process)
+
+[5. Jenkins stages and steps](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#5-jenkins-stages-and-steps)
+
+[6. Alternatives to Jenkins](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#6-alternatives-to-jenkins)
+
+[7. How to build a job in Jenkins](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#7-how-to-build-a-job-in-jenkins)
+
+[8. Linking two jobs together on Jenkins](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#8-linking-two-jobs-together-on-jenkins)
+
+[9. To connect GitHub repo with Jenkins using ssh key](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#9-to-connect-gibhub-repo-with-jenkins-using-ssh-key)
+
+[10. To set up automated testing](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#10-to-set-up-automated-testing)
+
+[11. To trigger 'build now' automatically](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#11-to-trigger-build-now-automatically)
+
+[12. Webhooks](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#12-webhooks)
+
+[13. To create a GitHub webhook in the Jenkins pipeline](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#13-to-create-a-github-webhook-in-the-jenkins-pipeline)
+
+----
+
 ### 1. What is it?
 
 It is a method in which some of the processes are automated to deliver a product more efficiently and more frequently.
@@ -143,7 +173,7 @@ NOTE: Always test jobs manually and independently, only then link them together.
 
 ----
 
-### 9. To connect GibHub repo with Jenkins using ssh key
+### 9. To connect GitHub repo with Jenkins using ssh key
 
 1. Go to the Github repo that you require (in this case cicd-with-jenkins)
 2. Go to `settings`
