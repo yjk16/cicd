@@ -259,16 +259,49 @@ You will get this notification:
 
 1. Create a new item `yoonji-ci-merge`
 2. Under Source Code Management, click `Git` and for `Branches to build` put `*/dev`
-3. Under `Additional behaviours`, choose `Merge before build`, Name of repository` should be `origin`, `Branch to merge to` should be `main`
+3. Under `Additional behaviours`, choose `Merge before build`, `Name of repository` should be `origin`, `Branch to merge to` should be `main` (and other edits, refer to screenshots below...)
+
+![alt](cimerge.png)
+
+![alt](cimerge2.png)
+
+![alt](cimerge3.png)
+
+![alt](cimerge4.png)
+
+![alt](cimerge5.png)
+
+![alt](cimerge6.png)
+
+![alt](cimerge7.png)
+
+NOTE: (you wouldn't build to `yoonji-push-to-production` for this...)
+
+![alt](cimerge8.png)
+
 4. `Save` and test.
 
 ----
 
 ### 15. Creating a build to get the code from main branch and pushing it to production
 
-1. To ssh into AWS from Jenkins, when configuring, under the `Provide Node & npm` box, click `SSH Agent` and add the relevant key.  In this case, it will be `tech230.pem`
+1. Create a `new item`
 
-Need to automate the process so not asked to confirm.
+To ssh into AWS from Jenkins, when configuring, under the `Provide Node & npm` box, click `SSH Agent` and add the relevant key.  In this case, it will be `tech230.pem`
+
+The job should look like:
+
+![alt](pushtoprod.png)
+
+![alt](ptp2.png)
+
+![alt](ptp3.png)
+
+![alt](ptp4.png)
+
+![alt](ptp5.png)
+
+Will need to automate the process of entering by ssh so not asked to confirm.
 
 Can use `rsync` or `scp` and disable StrictHostKeyChecking with something like the following...
 
@@ -282,6 +315,12 @@ then
 `pm2 kill`
 `pm2 start app.js`
 
-2. Can ssh in from your instance to check manually...
+![alt](ptp6.png)
 
-Jenkins
+----
+
+3. Make sure to edit your ci-merge.  Under `Post-build Actions`, `projects to build`, enter (in this case) `yoonji push to production`
+
+----
+
+2. Can ssh in from your instance to check manually...
