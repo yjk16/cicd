@@ -28,6 +28,10 @@
 
 [13. To create a GitHub webhook in the Jenkins pipeline](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#13-to-create-a-github-webhook-in-the-jenkins-pipeline)
 
+[14. To merge Git branches with Jenkins](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#14-to-merge-git-branches-with-jenkins)
+
+[15. Creating a build to get the code from main branch and pushing it to production](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#15-creating-a-build-to-get-the-code-from-main-branch-and-pushing-it-to-production)
+
 ----
 
 ### 1. What is it?
