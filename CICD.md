@@ -257,6 +257,8 @@ You will get this notification:
 
 ![alt](note.png)
 
+NOTE: Remember that if anything changes (for example the Payload URL), you will need to update the information otherwise it won't work.
+
 ----
 
 ### 14. To merge Git branches with Jenkins
@@ -279,7 +281,7 @@ You will get this notification:
 
 ![alt](cimerge7.png)
 
-NOTE: (you wouldn't build to `yoonji-push-to-production` for this...)
+NOTE: You wouldn't build to `yoonji-push-to-production` for this... (That is for the next stage.)
 
 ![alt](cimerge8.png)
 
