@@ -259,7 +259,7 @@ You will get this notification:
 
 ----
 
-### 14. To merge git branches with Jenkins
+### 14. To merge Git branches with Jenkins
 
 1. Create a new item `yoonji-ci-merge`
 2. Under Source Code Management, click `Git` and for `Branches to build` put `*/dev`
