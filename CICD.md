@@ -325,8 +325,8 @@ then
 
 ----
 
-3. Make sure to edit your ci-merge.  Under `Post-build Actions`, `projects to build`, enter (in this case) `yoonji push to production`
+2. Make sure to edit your ci-merge.  Under `Post-build Actions`, `projects to build`, enter (in this case) `yoonji push to production`
 
 ----
 
-2. Can ssh in from your instance to check manually...
+3. Can ssh in from your instance to check manually...
