@@ -386,10 +386,6 @@ then
 
 -----
 
-Should see:
-
-![alt](statusjenkins.png)
-
 11. Go to the instance public ip address, take away the `s` from `https` and add `:8080`
 
 12. Your password for the initial setup is listed when you `sudo systemctl status jenkins` but can also be found at `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
