@@ -279,10 +279,6 @@ NOTE: Remember that if anything changes (for example the Payload URL), you will 
 
 ![alt](cimerge6.png)
 
-![alt](cimerge7.png)
-
-NOTE: You wouldn't build to `yoonji-push-to-production` for this... (That is for the next stage.)
-
 ![alt](cimerge8.png)
 
 4. `Save` and test.
@@ -326,6 +322,8 @@ then
 ----
 
 2. Make sure to edit your ci-merge.  Under `Post-build Actions`, `projects to build`, enter (in this case) `yoonji push to production`
+
+![alt](cimerge7.png)
 
 ----
 
