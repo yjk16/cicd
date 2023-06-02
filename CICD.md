@@ -328,3 +328,70 @@ then
 ----
 
 3. Can ssh in from your instance to check manually...
+
+----
+
+### 16. Building a Jenkins server on AWS
+
+1. Create an instance on AWS using Ubuntu 18.04 LTS (ami-0a7493ba2bc35c1e9)
+
+2. Add HTTP, SSH, and port 8080 to the inbound security rules
+
+3. Once launched, connect in Bash via ssh
+
+4. You need to install key before updating Jenkins. Follow instructions on https://pkg.jenkins.io/debian-stable/
+
+    1. To add key to the system:
+
+    `curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    /usr/share/keyrings/jenkins-keyring.asc > /dev/null`
+
+    2. Add Jenkins apt repository:
+
+    `echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null`
+
+    3. Update local package and install Jenkins:
+
+    `sudo apt-get update`
+    `sudo apt-get install fontconfig openjdk-11-jre`
+    `sudo apt-get install jenkins`
+
+5. Install java:
+
+`sudo apt install openjdk-11-jre`
+
+6. Install nodejs:
+
+`sudo apt install nodejs`
+
+7. Install git:
+
+`sudo apt install git`
+
+8. To check they're all installed:
+
+`<> --version`
+
+9. To start it:
+
+`sudo systemctl enable jenkins`
+
+`sudo systemctl start jenkins`
+
+10. To check status:
+
+`sudo systemctl status jenkins`
+
+-----
+
+Should see:
+
+![alt](statusjenkins.png)
+
+11. Go to the instance public ip address, take away the `s` from `https` and add `:8080`
+
+12. Your password for the initial setup is listed when you `sudo systemctl status jenkins` but can also be found at `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+
+----
