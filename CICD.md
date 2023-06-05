@@ -339,7 +339,7 @@ then
 
 2. Add HTTP, SSH, and port 8080 to the inbound security rules
 
-3. Once launched, connect in Bash via ssh
+3. Once launched, connect in Bash via ssh and `sudo apt update` and `sudo apt upgrade`
 
 4. You need to install key before updating Jenkins. Follow instructions on https://pkg.jenkins.io/debian-stable/
 
