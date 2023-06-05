@@ -32,6 +32,8 @@
 
 [15. Creating a build to get the code from main branch and pushing it to production](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#15-creating-a-build-to-get-the-code-from-main-branch-and-pushing-it-to-production)
 
+[16. Building a Jenkins server on AWS](https://github.com/yjk16/cicd-with-jenkins/blob/main/CICD.md#16-building-a-jenkins-server-on-aws)
+
 ----
 
 ### 1. What is it?
